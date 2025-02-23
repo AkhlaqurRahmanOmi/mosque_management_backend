@@ -1,7 +1,8 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { Pool } from 'pg';
 
+@Global() // Make the DatabaseModule global
 @Module({
   providers: [
     {
