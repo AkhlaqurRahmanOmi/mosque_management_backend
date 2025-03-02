@@ -1,7 +1,11 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { Pool } from 'pg';
 
+ // Make the DatabaseModule global
+
+console.log(process.env.MOSQUEMANAGEMENT_DATABASE_URL);
+@Global()
 @Module({
   providers: [
     {
